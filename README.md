@@ -22,12 +22,32 @@ jimuqu-admin 项目的 Agent Skills 集合，为 Claude Code / Codex / Augment �
 
 ## 安装
 
-### Claude Code
+### 安装全部技能
+
 ```bash
 npx skills add chengliang4810/jimuqu-skills
 ```
 
+### 安装单个技能
+
+```bash
+npx skills add chengliang4810/jimuqu-skills --skill solon
+```
+
+### 安装多个指定技能
+
+```bash
+npx skills add chengliang4810/jimuqu-skills --skill solon solon-ai xbatis
+```
+
+### 查看可用技能列表
+
+```bash
+npx skills add chengliang4810/jimuqu-skills --list
+```
+
 ### 手动安装
+
 将 `skills/` 目录下的技能文件夹复制到 `~/.claude/skills/` 即可。
 
 ## 验证结果
