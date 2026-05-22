@@ -50,6 +50,40 @@ npx skills add chengliang4810/jimuqu-skills --list
 
 将 `skills/` 目录下的技能文件夹复制到 `~/.claude/skills/` 即可。
 
+## 更新
+
+### 更新当前项目里安装的技能
+
+```bash
+npx skills update -p -y
+```
+
+### 更新全局安装的技能
+
+```bash
+npx skills update -g -y
+```
+
+### 不确定安装范围时交互式更新
+
+```bash
+npx skills update
+```
+
+### 更新指定技能
+
+```bash
+npx skills update solon solon-ai xbatis
+```
+
+### 从手动安装迁移到 CLI 安装
+
+如果旧版本是手动复制到 `~/.claude/skills/` 的，建议重新使用官方 CLI 安装一次，后续即可通过 `npx skills update` 更新：
+
+```bash
+npx skills add chengliang4810/jimuqu-skills -g --skill solon
+```
+
 ## 验证结果
 
 所有技能经过 **245+ 次**真实业务场景模拟测试，平均评分 **24.98/25**，API 使用正确率接近 100%。
