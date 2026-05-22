@@ -1,6 +1,6 @@
 # solon-logging
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-logging`
+仓库路径：`solon-projects/solon-logging`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Solon 日志抽象、日志级别/附加器配置，以及 Logback、Log4j2、Simple 实现适配。
 

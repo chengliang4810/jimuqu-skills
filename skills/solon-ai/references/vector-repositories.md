@@ -1,6 +1,6 @@
 # 向量 Repository 选择
 
-源码目录：`/Users/chengliang/code-repositories/solon-ai/solon-ai-rag-repositorys`
+仓库路径：`solon-ai-rag-repositorys`（官方仓库：`https://gitee.com/opensolon/solon-ai`）
 
 ## 模块清单
 

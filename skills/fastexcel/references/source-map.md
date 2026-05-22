@@ -4,11 +4,7 @@
 
 当前参考版本：`cn.idev.excel:fastexcel:1.3.0`
 
-本地源码包：
-
-```text
-~/.m2/repository/cn/idev/excel/fastexcel/1.3.0/fastexcel-1.3.0-sources.jar
-```
+官方仓库：`https://github.com/fast-excel/fastexcel`
 
 Maven 依赖：
 

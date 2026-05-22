@@ -1,6 +1,6 @@
 # solon-shell
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-shell`
+仓库路径：`solon-projects/solon-shell`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：应用启动后交互式 Shell/REPL 与命令扫描。
 

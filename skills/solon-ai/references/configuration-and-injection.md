@@ -2,7 +2,7 @@
 
 ## 配置前缀
 
-测试配置示例在：`/Users/chengliang/code-repositories/solon-ai/solon-ai/src/test/resources/app.yml`
+测试配置示例在：`solon-ai/src/test/resources/app.yml`
 
 常见配置：
 

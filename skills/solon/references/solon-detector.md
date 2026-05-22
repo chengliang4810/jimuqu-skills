@@ -1,6 +1,6 @@
 # solon-detector
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-detector`
+仓库路径：`solon-projects/solon-detector`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：健康检查与系统探测指标。
 

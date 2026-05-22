@@ -2,10 +2,10 @@
 
 ## 总入口
 
-- README：`/Users/chengliang/code-repositories/solon-ai/README_CN.md`
-- 测试说明：`/Users/chengliang/code-repositories/solon-ai/TEST.md`
-- 常用配置：`/Users/chengliang/code-repositories/solon-ai/solon-ai/src/test/resources/app.yml`
-- 注入示例：`/Users/chengliang/code-repositories/solon-ai/solon-ai/src/test/java/demo/ai/Config.java`
+- README：`README_CN.md`
+- 测试说明：`TEST.md`
+- 常用配置：`solon-ai/src/test/resources/app.yml`
+- 注入示例：`solon-ai/src/test/java/demo/ai/Config.java`
 
 ## Chat / Embedding / RAG
 
@@ -38,7 +38,7 @@
 ## 查找建议
 
 ```bash
-find /Users/chengliang/code-repositories/solon-ai -path '*/src/test/java/*' -type f | grep 'features/ai\|demo/ai'
+find . -path '*/src/test/java/*' -type f | grep 'features/ai\|demo/ai'
 
-grep -R "PdfLoader\|InMemoryRepository\|ToolMapping\|McpServerEndpoint\|ReActAgent\|TeamAgent" /Users/chengliang/code-repositories/solon-ai/*/src/test/java
+grep -R "PdfLoader\|InMemoryRepository\|ToolMapping\|McpServerEndpoint\|ReActAgent\|TeamAgent" ./*/src/test/java
 ```

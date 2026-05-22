@@ -1,6 +1,6 @@
 # solon-security
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-security`
+仓库路径：`solon-projects/solon-security`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：认证授权、参数/Bean 校验、配置加密、Web 安全 Header/Filter、国密相关能力集合。
 

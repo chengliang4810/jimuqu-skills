@@ -1,6 +1,6 @@
 # 源码地图与模块
 
-默认源码目录：`/Users/chengliang/code-repositories/xbatis`
+官方仓库：`https://gitee.com/xbatis/xbatis`
 
 ## 顶层模块
 

@@ -1,6 +1,6 @@
 # solon-rx
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-rx`
+仓库路径：`solon-projects/solon-rx`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：响应式 Web 链与响应式数据访问扩展。
 

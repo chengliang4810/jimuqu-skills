@@ -1,17 +1,17 @@
 ---
 name: solon
 license: MIT
-description: 辅助开发、迁移、调试和解释 Solon Java 框架项目。只要用户在 Java 后端任务中提到 Solon、Solon Boot、org.noear.solon、@Controller/@Mapping/@Inject/@Managed/@BindProps、Solon 插件、Solon 配置、Solon 路由、Solon 参数绑定/校验、从 Spring Boot 迁移到 Solon，或需要根据本地 Solon 源码确认 API 与机制，都必须使用此技能。此技能会要求优先查证 /Users/chengliang/code-repositories/solon 源码，避免凭 Spring 或通用 Java 框架经验误写。
+description: 辅助开发、迁移、调试和解释 Solon Java 框架项目。只要用户在 Java 后端任务中提到 Solon、Solon Boot、org.noear.solon、@Controller/@Mapping/@Inject/@Managed/@BindProps、Solon 插件、Solon 配置、Solon 路由、Solon 参数绑定/校验、从 Spring Boot 迁移到 Solon，或需要根据 Solon 官方开源仓库确认 API 与机制，都必须使用此技能。此技能会要求优先查证 https://gitee.com/opensolon/solon 中的源码，避免凭 Spring 或通用 Java 框架经验误写。
 ---
 
 # Solon Dev Skill
 
-你在辅助 Solon 项目开发。Solon 的公开资料少，回答和实现必须以本地源码为准，而不是套用 Spring Boot 习惯。
+你在辅助 Solon 项目开发。Solon 的公开资料少，回答和实现必须以目标项目依赖版本和官方源码为准，而不是套用 Spring Boot 习惯。
 
 ## 首要原则
 
 1. **先判定任务类型**：业务开发、源码机制解释、迁移改造、问题排查、插件开发、配置/依赖选择。
-2. **优先查证本地 Solon 源码**：默认源码目录是 `/Users/chengliang/code-repositories/solon`。如果当前项目依赖版本与源码版本不同，先提醒并以当前项目依赖为准。
+2. **优先查证 Solon 官方源码**：官方仓库是 `https://gitee.com/opensolon/solon`。如果当前项目依赖版本与官方仓库版本不同，先提醒并以当前项目依赖版本为准。
 3. **不要臆造 API**：不确定的注解、方法、模块名必须 grep/read 源码或项目现有用法后再写。
 4. **避免 Spring 惯性**：不要默认使用 `@RestController`、`@Autowired`、`application.yml` 语义、Spring MVC 异常处理、Spring Validator 或 Spring Boot starter，除非当前项目明确兼容或已有封装。
 5. **回答要落到代码**：开发类任务优先给可直接放入项目的 Java 代码、依赖坐标、配置片段和验证方式。
@@ -56,7 +56,7 @@ description: 辅助开发、迁移、调试和解释 Solon Java 框架项目。�
 
 ### 源码机制解释
 
-1. 先定位源码：`grep -R "class X\|interface X\|@interface X" /Users/chengliang/code-repositories/solon`。
+1. 先定位源码：在 Solon 官方仓库根目录执行 `rg "class X|interface X|@interface X"`。
 2. 读取定义和调用链，不要只读注释。
 3. 输出结构：结论 → 关键源码路径 → 机制流程 → 使用建议/坑点。
 
@@ -78,14 +78,15 @@ description: 辅助开发、迁移、调试和解释 Solon Java 框架项目。�
 ## 常用源码查证命令
 
 ```bash
+# 在 https://gitee.com/opensolon/solon 克隆仓库根目录执行
 # 找注解或类定义
-grep -R "@interface Mapping\|class Solon\|interface Plugin" /Users/chengliang/code-repositories/solon/solon/src/main/java
+rg "@interface Mapping|class Solon|interface Plugin" solon/src/main/java
 
 # 找示例
-grep -R "@Valid\|RouterInterceptor\|implements Filter\|implements Plugin" /Users/chengliang/code-repositories/solon/__test/src/main/java
+rg "@Valid|RouterInterceptor|implements Filter|implements Plugin" __test/src/main/java
 
 # 找插件声明
-find /Users/chengliang/code-repositories/solon/solon-projects -path '*/META-INF/solon/*.properties'
+find solon-projects -path '*/META-INF/solon/*.properties'
 ```
 
 ## 输出规范

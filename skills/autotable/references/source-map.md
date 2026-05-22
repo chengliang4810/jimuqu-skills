@@ -1,6 +1,6 @@
 # 源码地图与模块
 
-默认源码目录：`/Users/chengliang/code-repositories/auto-table`
+官方仓库：`https://gitee.com/dromara/auto-table`
 
 根 `pom.xml` 显示当前源码版本为 `2.5.17`，groupId 为 `org.dromara.autotable`。
 

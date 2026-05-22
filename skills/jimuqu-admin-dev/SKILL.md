@@ -62,4 +62,4 @@ description: 辅助开发、调试和解释 jimuqu-admin 项目。只要当前�
 - 全程中文；Java 标识符保持原样。
 - 涉及项目代码时引用 `path:line`。
 - 不确定的项目能力先查文件，不臆造类名、工具类或注解。
-- 涉及 Solon/Solon AI API 不确定时，联动对应通用技能和本地源码查证。
+- 涉及 Solon/Solon AI API 不确定时，联动对应通用技能和官方源码查证。

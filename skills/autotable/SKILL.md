@@ -1,14 +1,14 @@
 ---
 name: autotable
 license: MIT
-description: 辅助开发、配置、调试和解释 AutoTable 自动维护数据库表结构框架。只要用户提到 AutoTable、org.dromara.autotable、@AutoTable、@AutoColumn、@PrimaryKey、@Index、@TableIndex、@AutoColumns、多数据库 dialect、自动建表/改表/建库、mode validate/create/update/none、auto-drop-column/table/index、record-sql、init-data、Flyway 脚本、Solon 插件或 Spring Boot starter 集成、事件回调/拦截器、类型映射、字段排序或没有创建表等问题，都必须使用此技能并优先查证 /Users/chengliang/code-repositories/auto-table 源码。
+description: 辅助开发、配置、调试和解释 AutoTable 自动维护数据库表结构框架。只要用户提到 AutoTable、org.dromara.autotable、@AutoTable、@AutoColumn、@PrimaryKey、@Index、@TableIndex、@AutoColumns、多数据库 dialect、自动建表/改表/建库、mode validate/create/update/none、auto-drop-column/table/index、record-sql、init-data、Flyway 脚本、Solon 插件或 Spring Boot starter 集成、事件回调/拦截器、类型映射、字段排序或没有创建表等问题，都必须使用此技能并优先查证 AutoTable 官方开源仓库。
 ---
 
 # AutoTable Skill
 
-你在辅助 AutoTable 项目开发。AutoTable 会自动维护数据库结构，存在 DDL 和数据丢失风险；回答必须以本地源码和官方文档为准，不能套用 JPA、Hibernate、MyBatis-Plus 或某个业务项目的习惯。
+你在辅助 AutoTable 项目开发。AutoTable 会自动维护数据库结构，存在 DDL 和数据丢失风险；回答必须以目标项目依赖版本、官方源码和官方文档为准，不能套用 JPA、Hibernate、MyBatis-Plus 或某个业务项目的习惯。
 
-默认源码目录：`/Users/chengliang/code-repositories/auto-table`
+官方仓库：`https://gitee.com/dromara/auto-table`
 
 ## 首要原则
 
@@ -57,16 +57,16 @@ description: 辅助开发、配置、调试和解释 AutoTable 自动维护数�
 
 ```bash
 # 核心注解
-grep -R "@interface AutoTable\|@interface AutoColumn\|@interface PrimaryKey\|@interface Index\|@interface TableIndex" /Users/chengliang/code-repositories/auto-table/auto-table-annotation/src/main/java
+rg "@interface AutoTable|@interface AutoColumn|@interface PrimaryKey|@interface Index|@interface TableIndex" auto-table-annotation/src/main/java
 
 # 配置与启动流程
-grep -R "class PropertyConfig\|class AutoTableBootstrap\|class AutoTableAutoConfig\|class AutoTablePlugin" /Users/chengliang/code-repositories/auto-table
+rg "class PropertyConfig|class AutoTableBootstrap|class AutoTableAutoConfig|class AutoTablePlugin"
 
 # 回调与拦截器
-grep -R "interface .*Callback\|interface .*Interceptor" /Users/chengliang/code-repositories/auto-table/auto-table-core/src/main/java
+rg "interface .*Callback|interface .*Interceptor" auto-table-core/src/main/java
 
 # 测试示例
-find /Users/chengliang/code-repositories/auto-table/auto-table-test -path '*/src/test/java/*' -type f
+find auto-table-test -path '*/src/test/java/*' -type f
 ```
 
 ## 输出规范

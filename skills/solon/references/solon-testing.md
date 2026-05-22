@@ -1,6 +1,6 @@
 # solon-testing
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-testing`
+仓库路径：`solon-projects/solon-testing`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Solon 测试启动、HTTP 测试、Mockito、MockWebServer、AOT 测试支持。
 

@@ -1,6 +1,6 @@
 # Solon AI 模块总览
 
-源码目录：`/Users/chengliang/code-repositories/solon-ai`
+官方仓库：`https://gitee.com/opensolon/solon-ai`
 
 ## 根目录模块
 

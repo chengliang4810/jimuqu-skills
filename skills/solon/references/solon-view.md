@@ -1,6 +1,6 @@
 # solon-view
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-view`
+仓库路径：`solon-projects/solon-view`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：视图渲染与模板引擎适配集合。
 

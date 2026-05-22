@@ -1,6 +1,6 @@
 # solon-docs
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-docs`
+仓库路径：`solon-projects/solon-docs`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：接口文档、OpenAPI 与 Knife4j UI 支持集合。
 

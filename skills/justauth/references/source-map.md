@@ -1,5 +1,7 @@
 # JustAuth 源码地图
 
+官方仓库：`https://gitee.com/yadong.zhang/JustAuth`
+
 ## 关键类型
 
 - `AuthRequest`

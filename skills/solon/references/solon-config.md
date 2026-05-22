@@ -1,6 +1,6 @@
 # solon-config
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-config`
+仓库路径：`solon-projects/solon-config`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：配置文件加载、配置对象转换、Banner 输出等配置增强能力集合。
 

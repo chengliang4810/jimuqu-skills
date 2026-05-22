@@ -1,6 +1,6 @@
 # Solon Projects 插件索引
 
-本索引对应源码目录：`/Users/chengliang/code-repositories/solon/solon-projects`。
+本索引对应仓库路径：`solon-projects`（官方仓库：`https://gitee.com/opensolon/solon`）。
 
 使用规则：
 

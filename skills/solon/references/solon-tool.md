@@ -1,6 +1,6 @@
 # solon-tool
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-tool`
+仓库路径：`solon-projects/solon-tool`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：构建期工具，包括 Maven/Gradle 打包、AOT、配置元数据处理。
 

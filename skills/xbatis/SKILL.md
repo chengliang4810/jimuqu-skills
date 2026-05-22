@@ -1,19 +1,19 @@
 ---
 name: xbatis
 license: MIT
-description: 辅助开发、迁移、调试和解释 Xbatis ORM / SQL API。只要用户提到 Xbatis、cn.xbatis、QueryChain、UpdateChain、DeleteChain、BaseMapper、MybatisMapper、@Table/@TableId/@TableField、@Condition/@ConditionTarget、逻辑删除、乐观锁、租户、分表、嵌套 VO、mapWithKey、SQL 模板、分页、AutoTable 组合使用，或需要根据 /Users/chengliang/code-repositories/xbatis 源码确认 API 与机制，都必须使用此技能。此技能只记录通用 Xbatis 能力，不写入某个业务项目的专属规范。
+description: 辅助开发、迁移、调试和解释 Xbatis ORM / SQL API。只要用户提到 Xbatis、cn.xbatis、QueryChain、UpdateChain、DeleteChain、BaseMapper、MybatisMapper、@Table/@TableId/@TableField、@Condition/@ConditionTarget、逻辑删除、乐观锁、租户、分表、嵌套 VO、mapWithKey、SQL 模板、分页、AutoTable 组合使用，或需要根据 Xbatis 官方开源仓库确认 API 与机制，都必须使用此技能。此技能只记录通用 Xbatis 能力，不写入某个业务项目的专属规范。
 ---
 
 # Xbatis Skill
 
-你在辅助 Xbatis 开发。Xbatis 公开资料相对少，回答和实现必须优先以本地源码为准，而不是套用 MyBatis-Plus、JPA 或通用 MyBatis 习惯。
+你在辅助 Xbatis 开发。Xbatis 公开资料相对少，回答和实现必须优先以目标项目依赖版本和官方源码为准，而不是套用 MyBatis-Plus、JPA 或通用 MyBatis 习惯。
 
-默认源码目录：`/Users/chengliang/code-repositories/xbatis`
+官方仓库：`https://gitee.com/xbatis/xbatis`
 
 ## 首要原则
 
 1. **先判定任务类型**：实体映射、Mapper/DAO、链式查询、条件对象、分页、增删改、逻辑删除、乐观锁、租户/分表、VO 映射、SQL 模板、问题排查。
-2. **优先查证本地源码**：不确定的注解、方法、参数语义、返回类型、模块依赖必须 grep/read 源码或测试示例。
+2. **优先查证官方源码**：不确定的注解、方法、参数语义、返回类型、模块依赖必须在官方仓库或目标项目依赖源码中查证。
 3. **避免框架惯性**：不要默认使用 MyBatis-Plus 的 `Wrapper`、`IService`、`BaseMapper` 语义，也不要套 JPA 注解或 Spring Data 写法。
 4. **区分通用框架与项目规范**：本技能只说明 Xbatis 通用能力。具体项目的目录结构、权限、返回包装、BaseMapperPlus 等以项目技能或项目文档为准。
 5. **输出要可落地**：给 Java 代码、依赖坐标、查询链写法、注解写法和验证方式；机制解释要引用 `path:line`。
@@ -41,7 +41,7 @@ description: 辅助开发、迁移、调试和解释 Xbatis ORM / SQL API。只�
 
 ### 源码机制解释
 
-1. 定位源码：`grep -R "class QueryChain\|@interface Condition\|interface BaseMapper" /Users/chengliang/code-repositories/xbatis`。
+1. 定位源码：在 Xbatis 官方仓库根目录执行 `rg "class QueryChain|@interface Condition|interface BaseMapper"`。
 2. 读取定义和测试用例，不只读 README。
 3. 输出结构：结论 → 关键源码路径 → 机制流程 → 使用建议/坑点。
 
@@ -55,13 +55,13 @@ description: 辅助开发、迁移、调试和解释 Xbatis ORM / SQL API。只�
 
 ```bash
 # 核心链式 API 与 Mapper
-grep -R "class QueryChain\|class UpdateChain\|class DeleteChain\|interface BaseMapper\|interface MybatisMapper" /Users/chengliang/code-repositories/xbatis/xbatis-core/src/main/java
+rg "class QueryChain|class UpdateChain|class DeleteChain|interface BaseMapper|interface MybatisMapper" xbatis-core/src/main/java
 
 # 核心注解
-grep -R "@interface Table\|@interface TableId\|@interface TableField\|@interface Condition\|@interface ConditionTarget" /Users/chengliang/code-repositories/xbatis/xbatis-annotation/src/main/java
+rg "@interface Table|@interface TableId|@interface TableField|@interface Condition|@interface ConditionTarget" xbatis-annotation/src/main/java
 
 # 测试示例
-grep -R "QueryChain.of\|UpdateChain.of\|DeleteChain.of\|mapWithKey\|returnType\|paging" /Users/chengliang/code-repositories/xbatis/xbatis-core/src/test/java
+rg "QueryChain.of|UpdateChain.of|DeleteChain.of|mapWithKey|returnType|paging" xbatis-core/src/test/java
 ```
 
 ## 输出规范

@@ -1,6 +1,6 @@
 # nami
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/nami`
+仓库路径：`solon-projects/nami`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Nami RPC/HTTP 客户端代理体系，包含通道和编解码器适配。
 

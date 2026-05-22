@@ -1,6 +1,6 @@
 # solon-web
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-web`
+仓库路径：`solon-projects/solon-web`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Web 层扩展集合，覆盖 SessionState、CORS、SSE、静态资源、服务停止、版本过滤、Servlet/Vert.x/WebDAV/WebServices 桥接等能力。
 

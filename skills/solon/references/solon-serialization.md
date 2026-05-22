@@ -1,6 +1,6 @@
 # solon-serialization
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-serialization`
+仓库路径：`solon-projects/solon-serialization`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Solon 输出渲染与编解码适配集合，覆盖 JSON、XML、Properties、二进制/RPC 序列化格式。
 

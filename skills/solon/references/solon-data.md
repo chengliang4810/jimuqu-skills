@@ -1,6 +1,6 @@
 # solon-data
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-data`
+仓库路径：`solon-projects/solon-data`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：数据访问、事务、数据源、缓存与 SQL 工具扩展集合。它不是单个 ORM，而是 Solon 数据能力的基础设施层。
 

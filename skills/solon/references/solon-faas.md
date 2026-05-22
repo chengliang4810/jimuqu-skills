@@ -1,6 +1,6 @@
 # solon-faas
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-faas`
+仓库路径：`solon-projects/solon-faas`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Luffy FaaS/脚本函数运行集成。
 

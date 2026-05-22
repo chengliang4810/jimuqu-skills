@@ -6,14 +6,14 @@ description: Use when working with sms4j, SmsBlend, SmsFactory, SmsDao, SmsRespo
 
 # sms4j 开发技能
 
-你在辅助 sms4j（`io.github.smiley4ever:sms4j` 及其相关模块）短信发送、provider 选择、配置和问题排查。本技能基于本地 Maven sources jar 与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
+你在辅助 sms4j（`org.dromara.sms4j` 及其相关模块）短信发送、provider 选择、配置和问题排查。本技能基于官方开源仓库与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
 
-本地源码来源：`~/.m2/repository/io/github/smiley4ever/sms4j/`
+官方仓库：`https://gitee.com/dromara/sms4j`
 
 ## 首要原则
 
 1. **先判定任务类型**：发送短信、验证码、模板短信、provider 选择、配置注入、回调/响应、缓存、重试、Solon/Spring 集成或安全排查。
-2. **优先查证源码**：不确定的 `SmsBlend`、`SmsFactory`、`SmsDao`、`SmsResponse`、配置类和 provider 行为，必须查本地 sources jar。
+2. **优先查证源码**：不确定的 `SmsBlend`、`SmsFactory`、`SmsDao`、`SmsResponse`、配置类和 provider 行为，必须查官方仓库或当前项目依赖版本的源码。
 3. **先定 provider 再写代码**：阿里云、腾讯、华为、云片等 provider 的参数和限制不同，不能把一个平台的写法套到另一个平台。
 4. **短信安全边界**：验证码要限频、限次、限时；不要把敏感验证码或模板参数写进日志。
 5. **失败要可观测**：发送失败时优先看 provider 返回码、错误消息和配置项是否匹配。
@@ -51,16 +51,9 @@ description: Use when working with sms4j, SmsBlend, SmsFactory, SmsDao, SmsRespo
 ## 常用查证命令
 
 ```bash
-# 解压 sources jar
-rm -rf /tmp/sms4j-3.3.4-api-src /tmp/sms4j-3.3.4-core-src /tmp/sms4j-3.3.4-provider-src /tmp/sms4j-3.3.4-solon-src
-mkdir -p /tmp/sms4j-3.3.4-api-src /tmp/sms4j-3.3.4-core-src /tmp/sms4j-3.3.4-provider-src /tmp/sms4j-3.3.4-solon-src
-unzip -q ~/.m2/repository/io/github/smiley4ever/sms4j/sms4j-api/3.3.4/sms4j-api-3.3.4-sources.jar -d /tmp/sms4j-3.3.4-api-src
-unzip -q ~/.m2/repository/io/github/smiley4ever/sms4j/sms4j-core/3.3.4/sms4j-core-3.3.4-sources.jar -d /tmp/sms4j-3.3.4-core-src
-unzip -q ~/.m2/repository/io/github/smiley4ever/sms4j/sms4j-provider/3.3.4/sms4j-provider-3.3.4-sources.jar -d /tmp/sms4j-3.3.4-provider-src
-unzip -q ~/.m2/repository/io/github/smiley4ever/sms4j/sms4j-solon-plugin/3.3.4/sms4j-solon-plugin-3.3.4-sources.jar -d /tmp/sms4j-3.3.4-solon-src
-
+# 在 https://gitee.com/dromara/sms4j 克隆仓库根目录执行
 # 核心 API
-grep -R "class SmsBlend\|class SmsFactory\|interface SmsDao\|class SmsResponse\|class SmsConfig" /tmp/sms4j-3.3.4-*-src
+rg "class SmsBlend|class SmsFactory|interface SmsDao|class SmsResponse|class SmsConfig"
 ```
 
 ## 输出规范

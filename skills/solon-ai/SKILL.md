@@ -1,14 +1,14 @@
 ---
 name: solon-ai
 license: MIT
-description: 辅助开发、迁移、调试和解释 Solon AI Java AI 应用。只要用户提到 Solon AI、solon-ai、ChatModel、EmbeddingModel、RAG、DocumentLoader、Repository、向量库、ToolMapping、Skill、MCP、McpServerEndpoint、Agent、ReActAgent、TeamAgent、AI Flow、provider 方言、Ollama/OpenAI/DashScope/Gemini/Anthropic 接入，或需要根据本地 Solon AI 源码确认 API 与机制，都必须使用此技能。
+description: 辅助开发、迁移、调试和解释 Solon AI Java AI 应用。只要用户提到 Solon AI、solon-ai、ChatModel、EmbeddingModel、RAG、DocumentLoader、Repository、向量库、ToolMapping、Skill、MCP、McpServerEndpoint、Agent、ReActAgent、TeamAgent、AI Flow、provider 方言、Ollama/OpenAI/DashScope/Gemini/Anthropic 接入，或需要根据 Solon AI 官方开源仓库确认 API 与机制，都必须使用此技能。
 ---
 
 # Solon AI Dev Skill
 
-你在辅助 Solon AI 项目开发。Solon AI 的 API 变化快，公开资料有限，回答和实现必须优先以本地源码为准。
+你在辅助 Solon AI 项目开发。Solon AI 的 API 变化快，公开资料有限，回答和实现必须优先以目标项目依赖版本和官方源码为准。
 
-默认源码目录：`/Users/chengliang/code-repositories/solon-ai`
+官方仓库：`https://gitee.com/opensolon/solon-ai`
 
 ## 首要原则
 
@@ -61,13 +61,13 @@ description: 辅助开发、迁移、调试和解释 Solon AI Java AI 应用。�
 
 ```bash
 # 核心类
-grep -R "class ChatModel\|class EmbeddingModel\|@interface ToolMapping" /Users/chengliang/code-repositories/solon-ai/solon-ai-core/src/main/java
+rg "class ChatModel|class EmbeddingModel|@interface ToolMapping" solon-ai-core/src/main/java
 
 # 插件声明
-find /Users/chengliang/code-repositories/solon-ai -path '*/META-INF/solon/*.properties'
+find . -path '*/META-INF/solon/*.properties'
 
 # 测试示例
-find /Users/chengliang/code-repositories/solon-ai -path '*/src/test/java/*' -type f | grep 'features/ai\|demo/ai'
+find . -path '*/src/test/java/*' -type f | grep 'features/ai\|demo/ai'
 ```
 
 ## 输出规范

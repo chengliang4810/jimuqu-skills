@@ -1,6 +1,6 @@
 # solon-net
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-net`
+仓库路径：`solon-projects/solon-net`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：WebSocket/Socket.D 路由与 HTTP 工具集合。
 

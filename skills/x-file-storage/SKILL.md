@@ -6,14 +6,14 @@ description: Use when working with x-file-storage, FileStorageService, FileInfo,
 
 # x-file-storage 开发技能
 
-你在辅助 x-file-storage（`org.dromara.x-file-storage`）相关开发、上传/删除、文件记录、平台配置、预处理和问题排查。本技能基于本地 Maven sources jar 与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
+你在辅助 x-file-storage（`org.dromara.x-file-storage`）相关开发、上传/删除、文件记录、平台配置、预处理和问题排查。本技能基于官方开源仓库与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
 
-本地源码来源：`~/.m2/repository/org/dromara/x-file-storage/`
+官方仓库：`https://github.com/dromara/x-file-storage`
 
 ## 首要原则
 
 1. **先判定任务类型**：单文件上传、批量上传、删除、文件信息查询、预处理链、回调、记录器、平台切换、缩略图、Web 响应流、Solon 集成或安全排查。
-2. **优先查证源码**：不确定的 `FileStorageService`、`UploadPretreatment`、`FileInfo`、回调和平台类行为，必须查本地 sources jar。
+2. **优先查证源码**：不确定的 `FileStorageService`、`UploadPretreatment`、`FileInfo`、回调和平台类行为，必须查官方仓库或当前项目依赖版本的源码。
 3. **不要把上传流程和业务记录混为一谈**：先理解存储库对象模型，再决定是否接入记录器或额外业务表。
 4. **外部输入要谨慎**：不要信任用户传入的文件路径、平台名、原始文件名或 URL；上传前限制大小、类型和路径。
 5. **资源与流**：Web 上传流、输入流、响应流要明确谁负责关闭；`UploadedFile` 这类外部流通常由框架或调用方管理，不要在示例里随手关闭。
@@ -52,14 +52,9 @@ description: Use when working with x-file-storage, FileStorageService, FileInfo,
 ## 常用查证命令
 
 ```bash
-# 解压 sources jar
-rm -rf /tmp/x-file-storage-2.3.0-core-src /tmp/x-file-storage-2.3.0-solon-src
-mkdir -p /tmp/x-file-storage-2.3.0-core-src /tmp/x-file-storage-2.3.0-solon-src
-unzip -q ~/.m2/repository/org/dromara/x-file-storage/x-file-storage-core/2.3.0/x-file-storage-core-2.3.0-sources.jar -d /tmp/x-file-storage-2.3.0-core-src
-unzip -q ~/.m2/repository/org/dromara/x-file-storage/x-file-storage-solon/2.3.0/x-file-storage-solon-2.3.0-sources.jar -d /tmp/x-file-storage-2.3.0-solon-src
-
+# 在 https://github.com/dromara/x-file-storage 克隆仓库根目录执行
 # 核心 API
-grep -R "class FileStorageService\|class FileInfo\|class UploadPretreatment\|interface FileRecorder\|class FileStorageProperties" /tmp/x-file-storage-2.3.0-core-src /tmp/x-file-storage-2.3.0-solon-src
+rg "class FileStorageService|class FileInfo|class UploadPretreatment|interface FileRecorder|class FileStorageProperties" x-file-storage-core/src/main/java x-file-storage-solon/src/main/java
 ```
 
 ## 输出规范

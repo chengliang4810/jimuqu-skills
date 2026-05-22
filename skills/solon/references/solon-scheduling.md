@@ -1,6 +1,6 @@
 # solon-scheduling
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-scheduling`
+仓库路径：`solon-projects/solon-scheduling`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：异步、定时、重试、命令调度核心与执行器实现。
 

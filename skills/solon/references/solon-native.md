@@ -1,6 +1,6 @@
 # solon-native
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-native`
+仓库路径：`solon-projects/solon-native`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：GraalVM/native-image AOT 元信息生成支持。
 

@@ -1,6 +1,6 @@
 # solon-boot
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-boot`
+仓库路径：`solon-projects/solon-boot`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：应用启动/server 依赖聚合层，为项目选择内嵌 server、WebSocket、SocketD、JSP 等运行时组合。
 

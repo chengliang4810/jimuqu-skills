@@ -1,6 +1,6 @@
 # Solon 源码地图
 
-默认源码目录：`/Users/chengliang/code-repositories/solon`
+官方仓库：`https://gitee.com/opensolon/solon`
 
 ## 根目录
 

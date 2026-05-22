@@ -1,19 +1,19 @@
 ---
 name: fastexcel
 license: MIT
-description: 辅助开发、配置、调试和解释 FastExcel / cn.idev.excel Excel 读写库。只要用户提到 FastExcel、cn.idev.excel、EasyExcel、@ExcelProperty、ExcelReader、ExcelWriter、ReadListener、AnalysisEventListener、Converter、ReadCellData、WriteCellData、WriteSheet、FillConfig、FillWrapper、模板填充、Excel 导入导出、下拉框、合并单元格、大数值精度、ExcelDataConvertException，或需要根据本地 Maven sources jar 确认 API 与行为，都必须使用此技能。此技能只记录通用 FastExcel 能力，不写入某个业务项目的专属规范。
+description: 辅助开发、配置、调试和解释 FastExcel / cn.idev.excel Excel 读写库。只要用户提到 FastExcel、cn.idev.excel、EasyExcel、@ExcelProperty、ExcelReader、ExcelWriter、ReadListener、AnalysisEventListener、Converter、ReadCellData、WriteCellData、WriteSheet、FillConfig、FillWrapper、模板填充、Excel 导入导出、下拉框、合并单元格、大数值精度、ExcelDataConvertException，或需要根据 FastExcel 官方开源仓库确认 API 与行为，都必须使用此技能。此技能只记录通用 FastExcel 能力，不写入某个业务项目的专属规范。
 ---
 
 # FastExcel 开发技能
 
-你在辅助 FastExcel（`cn.idev.excel:fastexcel`）相关开发、导入导出、模板填充、自定义转换器和问题排查。本技能基于本地 Maven sources jar 与项目真实用法整理；若目标项目版本不同，先以目标项目版本为准。
+你在辅助 FastExcel（`cn.idev.excel:fastexcel`）相关开发、导入导出、模板填充、自定义转换器和问题排查。本技能基于官方开源仓库和项目真实用法整理；若目标项目版本不同，先以目标项目版本为准。
 
-本地源码来源：`/Users/chengliang/.m2/repository/cn/idev/excel/fastexcel/1.3.0/fastexcel-1.3.0-sources.jar`
+官方仓库：`https://github.com/fast-excel/fastexcel`
 
 ## 首要原则
 
 1. **先判定任务类型**：写 Excel、读 Excel、同步小数据读取、监听器大数据读取、自定义 Converter、样式/列宽/合并、模板填充、多 sheet、多表、CSV、异常处理或安全排查。
-2. **优先查证源码**：不确定的 builder 方法、注解属性、监听器生命周期、Converter 方法签名、资源关闭行为，必须查本地 sources jar 或当前项目依赖版本。
+2. **优先查证源码**：不确定的 builder 方法、注解属性、监听器生命周期、Converter 方法签名、资源关闭行为，必须查官方仓库或当前项目依赖版本的源码。
 3. **不要混用 Hutool Excel / Apache POI / EasyExcel 旧包名**：当前库包名是 `cn.idev.excel`，工厂类 `EasyExcel` 实际继承 `FastExcelFactory`。
 4. **资源必须关闭**：`ExcelReader`、`ExcelWriter` 都有 `finish()/close()`；`doRead/doWrite/doReadSync` 会 finish，但手动 build 的 writer/reader 要显式 finish 或 try-with-resources。
 5. **导入默认流式监听优先**：大文件不要 `doReadSync()` 一次性读入内存；监听器内分批处理。
@@ -21,7 +21,7 @@ description: 辅助开发、配置、调试和解释 FastExcel / cn.idev.excel E
 
 ## 资料入口
 
-按任务读取对应 reference，必要时再读 sources jar：
+按任务读取对应 reference，必要时再读官方仓库或当前项目依赖源码：
 
 - 源码结构与核心 API：`references/source-map.md`
 - 写 Excel 与模板填充：`references/write-fill.md`
@@ -56,15 +56,12 @@ description: 辅助开发、配置、调试和解释 FastExcel / cn.idev.excel E
 ## 常用查证命令
 
 ```bash
-# 解压 sources jar
-rm -rf /tmp/fastexcel-1.3.0-src && mkdir -p /tmp/fastexcel-1.3.0-src
-unzip -q ~/.m2/repository/cn/idev/excel/fastexcel/1.3.0/fastexcel-1.3.0-sources.jar -d /tmp/fastexcel-1.3.0-src
-
+# 在 https://github.com/fast-excel/fastexcel 克隆仓库根目录执行
 # 核心 API
-grep -R "class FastExcelFactory\|class EasyExcel\|class ExcelWriter\|class ExcelReader" /tmp/fastexcel-1.3.0-src/cn/idev/excel
+rg "class FastExcelFactory|class EasyExcel|class ExcelWriter|class ExcelReader" fastexcel/src/main/java/cn/idev/excel
 
 # 注解、Converter、监听器
-grep -R "@interface ExcelProperty\|interface Converter\|interface ReadListener\|class AnalysisEventListener" /tmp/fastexcel-1.3.0-src/cn/idev/excel
+rg "@interface ExcelProperty|interface Converter|interface ReadListener|class AnalysisEventListener" fastexcel/src/main/java/cn/idev/excel
 ```
 
 ## 输出规范

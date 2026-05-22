@@ -1,6 +1,6 @@
 # solon-base
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-base`
+仓库路径：`solon-projects/solon-base`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：基础能力扩展，包括代理、MVC/handle、国际化、热插拔、状态机等。
 

@@ -6,14 +6,14 @@ description: Use when working with JustAuth, social login, OAuth callback handli
 
 # JustAuth 开发技能
 
-你在辅助 JustAuth（`me.zhyd.oauth:JustAuth`）相关开发、授权登录、回调处理、provider 选择和问题排查。本技能基于本地 Maven sources jar 与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
+你在辅助 JustAuth（`me.zhyd.oauth:JustAuth`）相关开发、授权登录、回调处理、provider 选择和问题排查。本技能基于官方开源仓库与真实项目用法整理；若目标项目版本不同，先以目标项目版本为准。
 
-本地源码来源：`~/.m2/repository/me/zhyd/oauth/JustAuth/1.16.7/`
+官方仓库：`https://gitee.com/yadong.zhang/JustAuth`
 
 ## 首要原则
 
 1. **先判定任务类型**：生成授权链接、处理回调、换取 token、获取用户信息、provider 选择、state 校验、缓存配置、开放平台对接、Solon/Spring 集成或安全排查。
-2. **优先查证源码**：不确定的 request、callback、response、user、state cache、builder 和 provider 行为，必须查本地 sources jar。
+2. **优先查证源码**：不确定的 request、callback、response、user、state cache、builder 和 provider 行为，必须查官方仓库或当前项目依赖版本的源码。
 3. **先选 provider 再写代码**：不同平台的回调地址、scope、参数名和用户信息结构不同，不能把别家 provider 的写法直接套进去。
 4. **state 和 redirectUri 不能省**：第三方登录必须认真处理 CSRF、防重放和回调地址一致性。
 5. **最小暴露**：回调接口只接收必要参数，令牌和用户信息不要随日志输出。
@@ -53,13 +53,9 @@ description: Use when working with JustAuth, social login, OAuth callback handli
 ## 常用查证命令
 
 ```bash
-# 解压 sources jar
-rm -rf /tmp/justauth-1.16.7-src
-mkdir -p /tmp/justauth-1.16.7-src
-unzip -q ~/.m2/repository/me/zhyd/oauth/JustAuth/1.16.7/JustAuth-1.16.7-sources.jar -d /tmp/justauth-1.16.7-src
-
+# 在 https://gitee.com/yadong.zhang/JustAuth 克隆仓库根目录执行
 # 核心 API
-grep -R "class AuthRequest\|class AuthDefaultRequest\|class AuthConfig\|class AuthCallback\|class AuthResponse\|class AuthUser\|interface AuthStateCache" /tmp/justauth-1.16.7-src
+rg "class AuthRequest|class AuthDefaultRequest|class AuthConfig|class AuthCallback|class AuthResponse|class AuthUser|interface AuthStateCache"
 ```
 
 ## 输出规范

@@ -1,6 +1,6 @@
 # solon-server
 
-源码目录：`/Users/chengliang/code-repositories/solon/solon-projects/solon-server`
+仓库路径：`solon-projects/solon-server`（官方仓库：`https://gitee.com/opensolon/solon`）
 
 用途：Solon 底层 server 运行时实现集合，覆盖 HTTP server、WebSocket、SocketD、JSP add-on 与通用 server 配置。
 
