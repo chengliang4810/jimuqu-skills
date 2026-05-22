@@ -24,7 +24,7 @@ jimuqu-admin 项目的 Agent Skills 集合，为 Claude Code / Codex / Augment �
 
 ### Claude Code
 ```bash
-gh skill install chengliang4810/jimuqu-skills
+npx skills add chengliang4810/jimuqu-skills
 ```
 
 ### 手动安装
